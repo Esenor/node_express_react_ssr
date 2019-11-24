@@ -5,4 +5,4 @@ import React from 'react'
 const el = document.getElementById('app')
 const data = JSON.parse(decodeURI(el.dataset.preloaded))
 
-hydrate(<App counterTotal={data.counter}/>, el)
+hydrate(<App preloaded={data}/>, el)

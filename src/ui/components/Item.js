@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const Item = ({title}) => {
+const Item = ({ title, image }) => {
   const [state, updateState] = useState(false)
   return (
     <React.Fragment>
@@ -9,7 +9,7 @@ const Item = ({title}) => {
           <span>{title}</span>
         </header>
         <section>
-          <img className={(state) ? 'rotating' : null} src="/img/logo.png" alt="default image" />
+          <img className={(state) ? 'rotating' : null} src={image} alt="default image" />
         </section>
       </article>
     </React.Fragment>

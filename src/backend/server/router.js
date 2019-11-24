@@ -4,6 +4,11 @@ export function registerServer (server) {
   const routes = [
     {
       method: 'all',
+      path: '/total/:total',
+      handler: defaultHandler
+    },
+    {
+      method: 'all',
       path: '/*',
       handler: defaultHandler
     }

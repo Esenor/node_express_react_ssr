@@ -7,7 +7,7 @@ const handler = (req, res) => {
   const templateName = 'defaultTemplate'
   const frontUiName = 'app'
   
-  const startValue = 10
+  const startValue = (req.params.total) ? parseInt(req.params.total) : 1
   
   const ssrApp = renderToString(
     <React.Fragment>
@@ -15,7 +15,7 @@ const handler = (req, res) => {
     </React.Fragment>
   )
 
-  const preloadedData = {
+  let preloadedData = {
     counter: startValue
   }
 
