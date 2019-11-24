@@ -29,6 +29,6 @@ module.exports = {
     return findEntriesFiles(path.join(__dirname, '/../../src/frontend/js'), '.js')
   },
   getScssEntryFiles: () => {
-    return findEntriesFiles(path.join(__dirname, '/../../src/frontend/scss'), '.js')
+    return findEntriesFiles(path.join(__dirname, '/../../src/frontend/scss'), '.scss')
   }
 }

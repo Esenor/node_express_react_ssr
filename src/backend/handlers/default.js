@@ -7,7 +7,7 @@ const handler = (req, res) => {
   const templateName = 'defaultTemplate'
   const frontUiName = 'app'
   
-  const startValue = 5
+  const startValue = 10
   
   const ssrApp = renderToString(
     <React.Fragment>
