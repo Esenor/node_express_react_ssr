@@ -1,5 +1,2 @@
-require('@babel/register')({
-  presets: ['@babel/preset-react', '@babel/preset-env']
-})
-
+require('@babel/register')()
 module.exports = require('./server/server.js')

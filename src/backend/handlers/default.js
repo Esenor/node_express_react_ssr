@@ -1,12 +1,25 @@
-import defaultTemplate from '../templates/default'
-import demoSsrApp from '../app/demo'
+import React from 'react'
+import { render } from '../server/renderer'
+import { renderToString } from 'react-dom/server'
+import App from '../../ui/components/App'
 
 const handler = (req, res) => {
-  const reactApp = demoSsrApp()
-  const renderedApp = reactApp.ssrRenderedApp
-  const preloadedData = reactApp.preloadedData
-  const frontLibraryName = 'Efc'
-  res.end(defaultTemplate(renderedApp, preloadedData, frontLibraryName))
+  const templateName = 'defaultTemplate'
+  const frontUiName = 'app'
+  
+  const startValue = 5
+  
+  const ssrApp = renderToString(
+    <React.Fragment>
+      <App counterTotal={ startValue }/>
+    </React.Fragment>
+  )
+
+  const preloadedData = {
+    counter: startValue
+  }
+
+  res.end(render(templateName, ssrApp, preloadedData, frontUiName))
 }
 
 export default handler

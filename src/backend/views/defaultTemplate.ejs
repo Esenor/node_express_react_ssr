@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Default ejs template</title>
+</head>
+
+<body>
+  <div id="app" data-preloaded="<%= jsonPreloadedData %>">
+    <%- ssrApp %>
+  </div>
+  <script src="<%= frontUiName %>"></script>
+</body>
+
+</html>
