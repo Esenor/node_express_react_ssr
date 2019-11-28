@@ -1,11 +1,12 @@
 import defaultHandler from '../handlers/default'
+import apiHandler from '../handlers/api'
 
 export function registerServer (server) {
   const routes = [
     {
       method: 'all',
-      path: '/total/:total',
-      handler: defaultHandler
+      path: '/api/v1',
+      handler: apiHandler
     },
     {
       method: 'all',
