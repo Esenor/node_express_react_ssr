@@ -5,25 +5,19 @@ import App from '../../ui/components/App'
 import request from 'request'
 
 const handler = async (req, res) => {
-  const templateName = 'defaultTemplate'
+  const mode = req.params.mode
+  const templateName = (mode === 'ssr') ? 'ssrTemplate' : 'defaultTemplate'
   const frontUiName = 'app'
-  
-  const memePlaceholder = (id, rank, name, imageName) => ({
-    id: id,
-    name: name,
-    picture: `http://localhost:3001/img/${imageName}`,
-    rank: rank
-  })
-  const memeTierlist = await getApiValue()
+  const tierlist = await getApiValue()
   
   const ssrApp = renderToString(
     <React.Fragment>
-      <App tierList={ memeTierlist }/>
+      <App tierList={ tierlist }/>
     </React.Fragment>
   )
 
   let preloadedData = {
-    tierList: memeTierlist
+    tierList: tierlist
   }
 
   res.end(render(templateName, ssrApp, preloadedData, frontUiName))
@@ -31,14 +25,12 @@ const handler = async (req, res) => {
 
 export default handler
 
-
 const getApiValue = async () => {
   return new Promise((resolve, reject) => {
     const options = {
       method: 'GET',
       url: 'http://localhost:3001/api/v1'
     }
-
     request(options, function (error, response, body) {
       resolve(JSON.parse(body))
     })

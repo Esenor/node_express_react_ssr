@@ -10,7 +10,7 @@ export function registerServer (server) {
     },
     {
       method: 'all',
-      path: '/*',
+      path: '/app/:mode',
       handler: defaultHandler
     }
   ]
