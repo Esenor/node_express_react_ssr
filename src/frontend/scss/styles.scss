@@ -1,12 +1,20 @@
+$color: #2F2F2F;
+$color_alt: #F2F2F2;
+$background: #F2F2F2;
+$background_alt: #6F6F6F;
+$background_alt_hover: #2F2F2F;
+
+
 html {
   body {
-    background-color: #222222;
-    color: #F2F2F2;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: $background;
+    color: $color;
 
     button {
-      background-color: #2A2A2A;
+      background-color: $background_alt;
       border-radius: 4px;
-      color: #F2F2F2;
+      color: $color_alt;
       font-weight: bold;
       padding: 2px 10px;
       margin: 10px;
@@ -14,57 +22,67 @@ html {
       cursor: pointer;
 
       &:hover {
-        background-color: #000000;
+        background-color: $background_alt_hover;
       }
-    }
-
-    input {
-      background-color: #F2F2F2;
-      border-radius: 4px;
-      color: #2A2A2A;
-      padding: 2px 10px;
-      margin: 10px;
-      height: 20px;
-      cursor: text;
     }
 
     .container {
 
-
-      .item {
-        padding: 10px;
+      .rankrow {
+        min-height: 164px;
+        border: 2px solid $background_alt;
         margin: 5px;
-        display: inline-block;
-        text-align: center;
-        width: 150px;
-        height: 150px;
-        background-color: #2A2A2A;
-        font-weight: bold;
-        cursor: pointer;
+        padding: 5px;
 
-        &:hover {
-          background-color: #000000;
+        .rankname {
+          text-transform: uppercase;
+          font-weight: bold;
+          font-size: 20px;
+          background: $background_alt;
+          border: 1px solid $background;
+          color: $color_alt;
+          padding: 5px;
+          position: absolute;
+          border-radius: 5px;
+          vertical-align: top;
+          display: inline-block;
+          text-align: center;
         }
 
-        img {
+        .item {
+          padding: 10px;
+          margin: 5px;
+          display: inline-block;
+          text-align: center;
           width: 120px;
           height: 120px;
+          background-color: $background;
+          color: $color_alt;
+          font-weight: bold;
+          transition: all 600ms ease;
+          &:hover {
+            transition: all 600ms ease;
+            background-color: $background_alt_hover;
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+            
+            button, header {
+              transition: all 600ms ease;
+              opacity: 1;
+            }
+          }
+
+          img {
+            width: 60px;
+            height: 60px;
+          }
+
+          button, header {
+            opacity: 0;
+            transition: all 600ms ease;
+          }
+          
         }
       }
     }
   }
-}
-
-@keyframes rotating {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.rotating {
-  animation: rotating 5s linear infinite;
 }

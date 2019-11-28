@@ -1,10 +1,10 @@
 import React from 'react'
 import Collection from './Collection'
 
-const App = ({ counterTotal, preloaded}) => {
-  counterTotal = (preloaded) ? preloaded.counter : counterTotal
+const App = ({tierList, preloaded}) => {
+  tierList = (preloaded) ? preloaded.tierList : tierList
   return (
-    <Collection items={[...Array(counterTotal)].map(() => '')}/>
+    <Collection items={tierList}/>
   )
 }
 
