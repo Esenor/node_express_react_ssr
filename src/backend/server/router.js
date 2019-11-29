@@ -1,5 +1,6 @@
 import defaultHandler from '../handlers/default'
 import apiHandler from '../handlers/api'
+import jsHandler from '../handlers/js'
 
 export function registerServer (server) {
   const routes = [
@@ -7,6 +8,11 @@ export function registerServer (server) {
       method: 'all',
       path: '/api/v1',
       handler: apiHandler
+    },
+    {
+      method: 'all',
+      path: '/serve/dist/js/:filename',
+      handler: jsHandler
     },
     {
       method: 'all',

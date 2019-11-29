@@ -3,7 +3,7 @@ import path from 'path'
 import fs from 'fs'
 
 const viewFolder = path.join(__dirname, '/../views/')
-const distLibUri = '/dist'
+const distLibUri = '/serve/dist'
 
 export function render(templateName, ssrApp, preloadedData, frontUiName) {
   return ejs.render(fs.readFileSync(path.join(viewFolder, `${templateName}.ejs`)).toString(), {
