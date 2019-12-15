@@ -8,7 +8,7 @@ const delay = (filename) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(path.join(__dirname, `../../../static/dist/js/${filename}`))
-    }, 2000)
+    }, 4000)
   })
 }
 

@@ -16,6 +16,8 @@ const handler = async (req, res) => {
     </React.Fragment>
   )
 
+  console.log(ssrApp)
+
   let preloadedData = {
     tierList: tierlist
   }

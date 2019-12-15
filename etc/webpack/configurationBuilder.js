@@ -10,7 +10,7 @@ const extractFileNameFormated = path => path.split('/').pop().replace('.js', '.m
 const jsFiles = entriesRepository.getJsEntryFiles()
 const scssFiles = entriesRepository.getScssEntryFiles()
 
-const mode = 'production'
+const mode = 'development'
 const watch = true
 
 let webpackConfigurations = []

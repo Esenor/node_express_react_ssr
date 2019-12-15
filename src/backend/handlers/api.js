@@ -23,6 +23,8 @@ const api = (req, res) => {
     memePlaceholder(115, 'c', 'vb', 'vb.jpg')
   ]
   res.type('json')
+  res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   res.json(memeTierlist)
 }
 
