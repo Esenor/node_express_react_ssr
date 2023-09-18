@@ -1,4 +1,4 @@
-# node_express_react_ssr #
+# node_express_react_ssr (legacy) #
 
 > npm i && npm run build && npm start
 
